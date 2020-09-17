@@ -24,6 +24,7 @@ export default class Line extends PureComponent {
     restricted: PropTypes.bool,
 
     tintColor: PropTypes.string,
+    disabledLineColor: PropTypes.string,
     baseColor: PropTypes.string,
     errorColor: PropTypes.string,
 
@@ -60,6 +61,7 @@ export default class Line extends PureComponent {
       lineWidth,
       activeLineWidth,
       disabledLineWidth,
+      disabledLineColor,
       baseColor,
       tintColor,
       errorColor,
@@ -68,7 +70,7 @@ export default class Line extends PureComponent {
 
     if (disabled) {
       return {
-        borderColor: baseColor,
+        borderColor: disabledLineColor || baseColor,
         borderWidth: disabledLineWidth,
       };
     }
